@@ -6,8 +6,6 @@ if (!isset($_SESSION['idusuario'])) {
 }
 
 $id_user = $_SESSION['idusuario'];
-//$clave = $row['clave'];
-//$nombreu = $row['nombre'];
 $sql = "SELECT id_usuario, nombre FROM usuarios WHERE id_usuario='$id_user' ";
 $empresas = " SELECT id_empresa, empresas.nombre, contacto, ciudad, cp FROM empresas LEFT JOIN ciudades on empresas.ciudad = ciudades.nombre WHERE asignado='$id_user'";
 $resultado2 = $conexion->query($empresas);

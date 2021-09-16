@@ -11,6 +11,7 @@ if (isset($_SESSION['idusuario'])) {
 if (isset($_POST["entrar"])) {
     $usuario = mysqli_real_escape_string($conexion, $_POST['usuario']);
     $clave_encrip = mysqli_real_escape_string($conexion, $_POST['clave']);
+    //cifrado de contraseña md5
     //$clave_encrip = md5($clave, true);
     $historial = "INSERT INTO Historial (usuario, clave, entro, fecha) VALUES ($usuario, $clave_encrip, '1', '') ";
     $resultado4 = $conexion->query($historial);
